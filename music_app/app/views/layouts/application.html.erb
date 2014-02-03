@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MusicApp</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <h1>MUSIC APP</h1>
+
+    <% if current_user %>
+      <p>hello <%=current_user.email%></p>
+      <%= link_to 'logout', logout_path %>
+    <%else%>
+      <%= link_to 'login!', login_path %> 
+    <%end%>
+
+  <% flash.each do |name, msg| %>
+    <div class="flash-message flash-message-<%= name %>">
+      <%= msg %>
+    </div>
+    <% end %>
+
+<%= yield %>
+
+</body>
+</html>
