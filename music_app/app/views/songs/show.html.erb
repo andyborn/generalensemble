@@ -1,8 +1,20 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <b>Artist:</b>
+  <%= @song.user.artist_name %>
+</p>
+
+<p>
   <b>Title:</b>
   <%= @song.title %>
+</p>
+
+<p>
+  <audio controls>
+  <source src="<%= @song.song_file %>" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
 </p>
 
 <p>
