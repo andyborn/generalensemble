@@ -10,7 +10,7 @@
   <h1>MUSIC APP</h1>
 
     <% if current_user %>
-      <p>hello <%=current_user.email%></p>
+      <p>Logged in as: <%=current_user.artist_name%></p>
       <%= link_to 'logout', logout_path %>
     <%else%>
       <%= link_to 'sign up!', new_user_path %>

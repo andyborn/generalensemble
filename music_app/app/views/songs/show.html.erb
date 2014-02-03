@@ -2,7 +2,7 @@
 
 <p>
   <b>Artist:</b>
-  <%= @song.user.artist_name %>
+  <%= link_to @song.user.artist_name, user_path(@song.user) %>
 </p>
 
 <p>
@@ -31,7 +31,8 @@ Your browser does not support the audio element.
   <%= @song.lyrics %>
 </p>
 
-
-<%= link_to 'Edit', edit_song_path(@song) %> 
-<%= link_to 'Destroy', @song, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% if current_user == @song.user %>
+  <%= link_to 'Edit', edit_song_path(@song) %> 
+  <%= link_to 'Destroy', @song, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%end%>
 <%= link_to 'Back', songs_path %>
