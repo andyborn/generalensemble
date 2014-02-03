@@ -13,6 +13,7 @@
       <p>hello <%=current_user.email%></p>
       <%= link_to 'logout', logout_path %>
     <%else%>
+      <%= link_to 'sign up!', new_user_path %>
       <%= link_to 'login!', login_path %> 
     <%end%>
 
@@ -21,6 +22,13 @@
       <%= msg %>
     </div>
     <% end %>
+
+    <nav>
+        <ul>
+          <li><%= link_to 'Artists', users_path %></li>      
+          <li><%= link_to 'Songs', songs_path %></li>       
+        </ul>
+    </nav>
 
 <%= yield %>
 

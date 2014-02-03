@@ -22,10 +22,9 @@ Your browser does not support the audio element.
   <%= @song.about %>
 </p>
 
-<p>
-  <b>Image:</b>
-  <%= @song.image %>
-</p>
+<div>
+  <%= image_tag @song.image.detail.url %>
+</div>
 
 <p>
   <b>Lyrics:</b>
@@ -33,5 +32,6 @@ Your browser does not support the audio element.
 </p>
 
 
-<%= link_to 'Edit', edit_song_path(@song) %> |
+<%= link_to 'Edit', edit_song_path(@song) %> 
+<%= link_to 'Destroy', @song, method: :delete, data: { confirm: 'Are you sure?' } %>
 <%= link_to 'Back', songs_path %>

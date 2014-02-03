@@ -1,24 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Email:</b>
-  <%= @user.email %>
-</p>
-
-<p>
-  <b>Password:</b>
-  <%= @user.password %>
-</p>
-
-<p>
   <b>Artist name:</b>
   <%= @user.artist_name %>
 </p>
 
-<p>
-  <b>Artist image:</b>
-  <%= @user.artist_image %>
-</p>
+<div>
+  <%= image_tag @user.artist_image.detail.url %>
+</div>
 
 <p>
   <b>Bio:</b>
@@ -30,6 +19,23 @@
   <%= @user.website %>
 </p>
 
+<h2>Songs</h2>
+
+  <% @user.songs.each do |song|%>
+  <%=song.title%>
+    <p>
+  <div>
+  <%= link_to image_tag(song.image.thumb.url), song_path(song) %>
+  </div>
+  <audio controls>
+  <source src="<%= song.song_file %>" type="audio/mpeg">
+  Your browser does not support the audio element.
+  </audio>
+  </p>
+  
+  <%end%>
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' } %>
 <%= link_to 'Back', users_path %>
