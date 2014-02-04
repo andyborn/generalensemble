@@ -47,13 +47,10 @@ class CommentsController < ApplicationController
     @comment = @song.comments.new(params[:comment])
     @comment.user = current_user
 
-    respond_to do |format|
-      if @comment.save
-        format.html { redirect_to [@song, @comment], notice: 'Comment was successfully created.' }
-      else
-        format.html { render action: "index" }
-      end
+    if @comment.save
+      redirect_to song_path(@song)
     end
+    
   end
 
   # # PUT /comments/1
@@ -78,10 +75,9 @@ class CommentsController < ApplicationController
     @comment = @song.comments.find(params[:id])
     @comment.destroy
 
-    respond_to do |format|
-      format.html { redirect_to song_comments_url }
-      format.json { head :no_content }
-    end
+    redirect_to song_path(@song)
+  
+    
   end
 end
 

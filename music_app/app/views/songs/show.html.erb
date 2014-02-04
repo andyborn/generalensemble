@@ -35,4 +35,14 @@ Your browser does not support the audio element.
   <%= link_to 'Back', songs_path %>
 </div> 
 
+<div>
+<% @song.comments.each do |comment| %>
+<%= comment.updated_at%><br>
+<%= comment.user.artist_name%><br>
+<%= comment.comment %><br>
+<%= link_to 'Delete Comment', [@song, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
+<%end%>
+</div>
+
+
 <%= render 'form_comment' %> 
