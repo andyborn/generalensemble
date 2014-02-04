@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   attr_accessible :artist_image, :artist_name, :bio, :email, :password, :website, :password_confirmation
 
   has_many :songs
+  has_many :comments
 
 
   validates :password, presence: true, on: :create

@@ -1,5 +1,11 @@
 MusicApp::Application.routes.draw do
-  resources :songs
+  resources :comments
+
+
+  resources :songs do
+    resources :comments
+  end
+
 
 
   resources :users
