@@ -152,8 +152,40 @@
   height
  }
  
+ .song_details {
+  width: 400px;
+  position: relative;
+  float: left;
+/*  border: solid 1px black;*/
+  margin-left: 30px;
+  margin-bottom: 30px;
+ }
 
+ .player_large {
+  width: 400px;
+  position: relative;
+  float: right;
+ /* border: solid 1px black;*/
+  margin-right: 40px;
+  margin-bottom: -10px;
+  margin-top: 10px;
+ }
 
+ .player_large img {
+  width: 400px;
+  height: 400px;
+ }
+
+ .song_options {
+  width: 400px;
+  position: relative;
+  float: left;
+  /*border: solid 1px black;*/
+  margin-left: 30px;
+  margin-bottom: 30px;
+ }
+
+ }
 
 
 
