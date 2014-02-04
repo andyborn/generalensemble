@@ -1,36 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MusicApp</title>
+  <title>Music Forum</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <h1>MUSIC APP</h1>
+  <div class = "main_container">
+    <div class = "header">
+      <div id = "logo"><h1> theFORUM //</h1></div>
+      <div id = "welcome">
+        <% if current_user %>
+          <h3>Hi <%=current_user.artist_name%>
+          <%= link_to ' logout', logout_path %></h3>
+        <%else%>
+          <h3><%= link_to 'sign up  |', new_user_path %>
+          <%= link_to 'login', login_path %></h3> 
+        <%end%>
 
-    <% if current_user %>
-      <p>Logged in as: <%=current_user.artist_name%></p>
-      <%= link_to 'logout', logout_path %>
-    <%else%>
-      <%= link_to 'sign up!', new_user_path %>
-      <%= link_to 'login!', login_path %> 
-    <%end%>
-
-  <% flash.each do |name, msg| %>
-    <div class="flash-message flash-message-<%= name %>">
-      <%= msg %>
-    </div>
-    <% end %>
-
-    <nav>
-        <ul>
-          <li><%= link_to 'Artists', users_path %></li>      
-          <li><%= link_to 'Songs', songs_path %></li>       
+        <% flash.each do |name, msg| %>
+          <div class="flash-message flash-message-<%= name %>">
+            <%= msg %>
+          </div>
+        <% end %>
+      </div>  
+    </div>  
+      <div class = "nav"> 
+        <ul id="list_in_a_row">
+            <li><%= link_to 'Artists', users_path %></li>      
+            <li><%= link_to 'Songs', songs_path %></li> 
+            <%if current_user%>  
+            <li><%= link_to 'My Profile', user_path(current_user)%></li>
+            <%end%>    
         </ul>
-    </nav>
+      </div>
+    <%= yield %>
 
-<%= yield %>
-
+  </div>
 </body>
 </html>

@@ -1,18 +1,15 @@
 <h1>Songs</h1>
 
 <% @songs.each do |song| %>
-
-  <div>
-    <%= link_to image_tag(song.image.thumb.url), song_path(song) %>
-  </div>
+<div class = "index_item">
+    <%= link_to image_tag(song.image.thumb.url), song_path(song) %>  
   <tr>
-    <td><%= song.title %></td>
-    <td>by <%=link_to song.user.artist_name, user_path(song.user)%></td>
+    <h3><%= song.title %><br><span>by </span><%=link_to song.user.artist_name, user_path(song.user)%></h3>
   </tr>
-  
+</div>  
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Song', new_song_path %>
+

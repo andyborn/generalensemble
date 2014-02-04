@@ -1,43 +1,54 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Artist name:</b>
+<h1>
   <%= @user.artist_name %>
-</p>
+</h1>
 
-<div>
+
+
+
+
+  <div class = "artist_details">
   <%= image_tag @user.artist_image.detail.url %>
-</div>
+  <p>
+    <b>Bio:</b>
+    <%= @user.bio %>
+  </p>
 
-<p>
-  <b>Bio:</b>
-  <%= @user.bio %>
-</p>
+  <h3>
+    <b>Website:</b>
+    <%= @user.website %>
+  </h3>
 
-<p>
-  <b>Website:</b>
-  <%= @user.website %>
-</p>
-
+  <div class = "discography">
 <h2>Songs</h2>
 
-  <% @user.songs.each do |song|%>
-  <%=song.title%>
-    <p>
-  <div>
-  <%= link_to image_tag(song.image.thumb.url), song_path(song) %>
-  </div>
-  <audio controls>
-  <source src="<%= song.song_file %>" type="audio/mpeg">
-  Your browser does not support the audio element.
-  </audio>
-  </p>
-  
-  <%end%>
+  <% @user.songs.each do |song| %>
+    <div class = "index_item">
+      <%= link_to image_tag(song.image.thumb.url), song_path(song) %>  
+    <tr>
+      <h3><%= song.title %> by <%=link_to song.user.artist_name, user_path(song.user)%></h3>
+    </tr>
+    </div>  
+  <% end %>
+ </div> 
+</div>
 
+ <div class = "artist_options">
 <% if current_user == @user %>
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' } %>
+<h2><%= link_to 'Add Song', new_song_path %></h2>
+<h3><%= link_to 'Edit Profile', edit_user_path(@user) %></h3>
+<h3><%= link_to 'Delete Profile', @user, method: :delete, data: { confirm: 'Are you sure?' } %></h3>
 <%end%>
 <%= link_to 'Back', users_path %>
+<div>
+
+<div id = "clear"></div>
+
+
+
+
+
+
+
 

@@ -1,20 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Artist:</b>
-  <%= link_to @song.user.artist_name, user_path(@song.user) %>
-</p>
-
-<p>
-  <b>Title:</b>
-  <%= @song.title %>
-</p>
-
-<p>
+<div class = "player_large">
+  <%= image_tag @song.image.detail.url %><br><br>
   <audio controls>
   <source src="<%= @song.song_file %>" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
+</div>
+
+
+
+<h1>
+  <%= @song.title %>
+</h1>
+
+<p>
+  by <%= link_to @song.user.artist_name, user_path(@song.user) %>
 </p>
 
 <p>
@@ -22,9 +23,7 @@ Your browser does not support the audio element.
   <%= @song.about %>
 </p>
 
-<div>
-  <%= image_tag @song.image.detail.url %>
-</div>
+
 
 <p>
   <b>Lyrics:</b>

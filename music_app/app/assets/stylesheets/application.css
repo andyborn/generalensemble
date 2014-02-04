@@ -11,3 +11,152 @@
  *= require_self
  *= require_tree .
  */
+
+ body {
+  height: 100%;
+  background-color: #E9E8E8;
+  font-size: 16px;
+  font-family: helvetica;
+  line-height: 120%;
+  height: 100%;
+ }
+
+ div {
+  margin: 0;
+ }
+
+ h1 {
+  font-size: 250%; 
+ }
+
+ h2 {
+  font-size: 125%; 
+ }
+
+ h3 {
+  font-size: 80%;
+  padding-top: none;
+ }
+
+
+
+ p {
+  margin: none;
+  padding: none;
+ }
+
+ .field{
+  line-height: 130%;
+  padding-bottom: 5px;
+  font-size: 85%;
+ }
+
+ a {
+  text-decoration: none;
+ }
+
+ .main_container {
+  
+  width: 900px;
+  margin: 0 auto;
+  height: 2000px;
+
+ }
+
+ .header {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  background-color: rgb(81, 104, 103);
+  color: #FAFFFF;
+
+ }
+
+ #logo{
+  position: relative;
+  float: left;
+  height: 60px;
+  padding-left: 10px;
+  font-size: 12px;
+
+  
+ }
+
+ #welcome{
+  position: relative;
+  float: right;
+  height: 60px;
+  padding-right: 12px;
+  padding-top: 10px;
+ }
+
+ .nav {
+  position: relative;
+  width: 100%;
+  height: 8px;
+  border-bottom: 2px solid rgb(81, 104, 103);
+  padding-top: 8px;
+  padding-bottom: 20px;
+ }
+
+ ul {
+  margin: 0;
+  padding: 0;
+ }
+
+ #list_in_a_row li {
+  display: inline;
+  font-size: 90%;
+  padding: 0 40px 0 10px;
+  font-weight: bold;
+
+ }
+
+ 
+
+ .index_item{
+  width: 200px;
+  height: 250px;
+  /*border: solid 2px black;*/
+  position: relative;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 30px;
+ }
+
+ .artist_details {
+  width: 500px;
+  position: relative;
+  float: left;
+  /*border: solid 2px;*/
+ }
+
+ .discography {
+  position: relative;
+  float: left;
+  width: 700px;
+  
+
+  /*border: solid 2px;*/
+ }
+
+ .artist_options {
+  position: relative;
+  width: 200px;
+  float: right;
+  margin-right: 100px;
+ }
+
+ #clear {
+  width: 20px;
+  height
+ }
+ 
+
+
+
+
+
+
+
+
