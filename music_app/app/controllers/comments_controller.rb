@@ -49,7 +49,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        # format.html { redirect_to [@post, @comment], notice: 'Comment was successfully created.' }
+        format.html { redirect_to [@song, @comment], notice: 'Comment was successfully created.' }
       else
         format.html { render action: "index" }
       end
