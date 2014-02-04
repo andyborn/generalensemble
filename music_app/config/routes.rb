@@ -1,4 +1,7 @@
 MusicApp::Application.routes.draw do
+  resources :comments
+
+
   resources :songs
 
 
