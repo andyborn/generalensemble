@@ -11,6 +11,14 @@
   <div class = "artist_details">
   <%= image_tag @user.artist_image.detail.url %>
   <p>
+
+  <h2>tags</h2>
+    <% @user.tags.any? %>
+    <% @user.tags.each do |tag| %>
+    <%= link_to tag.name, tagged_url(:tag => tag.name) %>
+    <% end %>
+    <br>
+    <br>
     <b>Bio:</b>
     <%= @user.bio %>
   </p>
@@ -19,6 +27,8 @@
     <b>Website:</b>
     <%= @user.website %>
   </h3>
+
+ 
 
   <div class = "discography">
 <h2>Songs</h2>

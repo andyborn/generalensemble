@@ -3,11 +3,13 @@ class User < ActiveRecord::Base
 
   before_validation :set_default_role
 
+  acts_as_taggable_on :tags
+
   
 
   mount_uploader :artist_image, ArtistImageUploader
 
-  attr_accessible :artist_image, :artist_name, :bio, :email, :password, :website, :password_confirmation
+  attr_accessible :artist_image, :artist_name, :bio, :email, :password, :website, :password_confirmation, :tag_list
 
   has_many :songs
   has_many :comments

@@ -3,7 +3,14 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
 
-  
+  def tagged
+  if params[:tag].present? 
+    @users = User.tagged_with(params[:tag])
+    @tag = params[:tag]
+  else 
+    @users = User.all
+  end  
+  end
 
 
   def index

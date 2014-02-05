@@ -1,9 +1,10 @@
 
 
-<h1>Welcome to TheForum!</h1>
-<h2>/// Share, Listen, Discuss ///<h2>
+
+<br>
+<h2>/// <a href="#artists">Share</a>, <a href="#songs">Listen</a>, <a href="#tags">Discover</a>, <a href="#comments">Discuss</a> ///<h2>
 <div class = "home_page">
-<div class = "home">
+<div class = "home" id = "artists">
   <h1>Artists</h1>
 
   <% @users.each do |user| %>
@@ -16,8 +17,27 @@
   <% end %>
 </div>
 
+<div class = "home" id = "tags">
+<h1>Tags</h1>
 
-<div class = "home">
+
+<% if @tags.count > 0 %>
+  
+    <% @tags.each do |tag| %>
+      <%= link_to tag.name, tagged_url(:tag => tag.name) %>
+    <% end %>
+  
+<% else %>
+  <p>There are no tags on the system.</p>
+<% end %>
+
+<br>
+<br>
+<br>
+<br>
+</div>
+
+<div class = "home" id = "songs">
 <h1>Songs</h1>
 
   <% @songs.each do |song| %>
@@ -30,7 +50,7 @@
   <% end %>
   </table>
 
-<div class = "comments_container_home">
+<div class = "comments_container_home" id = "comments">
 <h1>Comments</h1>
   <ul>
   <% @comments.each do |comment| %>
@@ -49,6 +69,8 @@
     <br class="clear" />
   </ul>
 <div>
+
+
 
 
 

@@ -20,5 +20,7 @@ MusicApp::Application.routes.draw do
 
   match '/admin', to: 'admin#index', as: :admin
 
+  match 'tagged' => 'users#tagged', :as => 'tagged'
+
 
 end
