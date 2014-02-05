@@ -14,4 +14,9 @@ MusicApp::Application.routes.draw do
   resources :sessions
   
   root to: "home#index"
+
+  match 'songs/:song_id/comments/:id', to: 'comments#flag', as: :comments_flag
+
+
+
 end

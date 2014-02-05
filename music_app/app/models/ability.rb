@@ -7,6 +7,8 @@ class Ability < ActiveRecord::Base
       can :manage, Song
       can :manage, User
       can :destroy, Comment
+      can :flag, Comment
+      can :unflag, Comment
 
     elsif user.role? :artist  
       can :read, :all
@@ -27,6 +29,7 @@ class Ability < ActiveRecord::Base
       user_object == user
       end
 
+      can :flag, Comment
 
     else
       can :read, :all

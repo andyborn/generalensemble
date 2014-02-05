@@ -47,22 +47,27 @@
         <%= image_tag comment.user.artist_image.thumb.url %>
       </div>
       <div class = "comment_detail">
+        <%if comment.flagged == true%>
+        <p><%= "**Comment flagged for moderation**"%></p>
+        <%else%>
         <p><%= comment.comment %><p>
+          <%end%>
+          
         <h3><%= comment.updated_at.strftime("%d %B %Y")%> by 
         <%=link_to comment.user.artist_name, user_path(comment.user)%></h3>
       </div><br>
       
+      <h3>
         <% if can? :manage, comment %>
-        <h3><%= link_to 'Delete Comment', [@song, comment], method: :delete, data: { confirm: 'Are you sure?' } %></h3>
+        <%= link_to 'Delete', [@song, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
         <%end%>
+      
+      <% if can? :flag, comment %>
+      <%= link_to 'Flag', [@song, comment], method: :flag, data: { confirm: 'Are you sure you want to flag?' } %>
       <%end%>
-
-      <%= form_for @comment, :url => { :action => "flag" } do |f| %>
-      <%= check_box_tag(:flagged) %>
-      <%= label_tag(:flagged, "tick to tag") %>
-      <%= f.submit "Update Tag" %>
-      <% end %>
- 
+        </h3>
+      
+      <%end%>
 
       </div>
     
