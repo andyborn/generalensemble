@@ -33,6 +33,9 @@
             <li><%= link_to 'Songs', songs_path %></li> 
             <%if current_user%>  
             <li><%= link_to 'My Profile', user_path(current_user)%></li>
+            <%end%>
+            <%if current_user && current_user.role == "admin"%>
+            <li><%= link_to 'Admin', admin_path%></li>
             <%end%>    
         </ul>
       </div>

@@ -1,0 +1,32 @@
+
+
+<div class = "home_artists">
+  <h1>Artists</h1>
+
+  <% @users.each do |user| %>
+    
+    <%= user.artist_name %>
+  <% end %>
+</div>
+
+
+<div class = "home_songs">
+  <h1>Songs</h1>
+
+  <% @songs.each do |song| %>
+    <%= song.title %><br><span>by </span><%=song.user.artist_name%> 
+  <% end %>
+ </div>
+
+<div class = "comments_container">
+<h1>Comments</h1>
+  <ul>
+  <% @comments.each do |comment| %>
+    <li>
+      <p><%= comment.comment %><p>
+      <h3><%= comment.updated_at.strftime("%d %B %Y")%> by 
+        <%=comment.user.artist_name%></h3>
+      </li><br>
+    <%end%>
+    <br class="clear" />
+  </ul>
