@@ -84,6 +84,16 @@ class CommentsController < ApplicationController
     
   end
 end
+  
+  def flag
+    @comment = @song.comments.find(params[:id])
+    @comment.update_attributes(params[:flag])
+    if @comment.save
+      redirect_to song_path(@song)
+    end
+  end
+
+
 
   private
   def load_song

@@ -57,6 +57,13 @@
         <%end%>
       <%end%>
 
+      <%= form_for @comment, :url => { :action => "flag" } do |f| %>
+      <%= check_box_tag(:flagged) %>
+      <%= label_tag(:flagged, "tick to tag") %>
+      <%= f.submit "Update Tag" %>
+      <% end %>
+ 
+
       </div>
     
     </li><br>
