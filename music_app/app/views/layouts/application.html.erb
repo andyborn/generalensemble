@@ -28,6 +28,7 @@
     </div>  
       <div class = "nav"> 
         <ul id="list_in_a_row">
+            <li><%= link_to 'Home', root_path %></li>
             <li><%= link_to 'Artists', users_path %></li>      
             <li><%= link_to 'Songs', songs_path %></li> 
             <%if current_user%>  

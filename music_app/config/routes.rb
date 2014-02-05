@@ -5,7 +5,7 @@ MusicApp::Application.routes.draw do
     resources :comments
   end
 
-
+  
 
   resources :users
 
@@ -13,5 +13,5 @@ MusicApp::Application.routes.draw do
   get '/logout', to: 'sessions#destroy', as: :logout
   resources :sessions
   
-  root to: "users#index"
+  root to: "home#index"
 end

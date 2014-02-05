@@ -1,0 +1,41 @@
+
+
+<h1>Welcome to TheForum!</h1>
+<h2>Share, Listen, Discuss<h2>
+
+<div class = "home_artists">
+  <h1>Artists</h1>
+
+  <% @users.each do |user| %>
+     <div class = "index_item"> 
+    
+    <%= link_to image_tag(user.artist_image.thumb.url), user_path(user) %>
+    
+    <h3><%= user.artist_name %></h3>
+    </div>
+  <% end %>
+</div>
+
+
+<div class = "home_songs">
+<h1>Songs</h1>
+
+  <% @songs.each do |song| %>
+  <div class = "index_item">
+      <%= link_to image_tag(song.image.thumb.url), song_path(song) %>  
+    <tr>
+      <h3><%= song.title %><br><span>by </span><%=link_to song.user.artist_name, user_path(song.user)%></h3>
+    </tr>
+  </div>  
+  <% end %>
+  </table>
+
+</div>
+
+<br />
+
+
+
+
+
+<br />

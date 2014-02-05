@@ -38,7 +38,9 @@
   padding-top: none;
  }
 
-
+ li {
+  list-style-type: none;
+ }
 
  p {
   margin: none;
@@ -185,8 +187,63 @@
   margin-bottom: 30px;
  }
 
+ .home_artists {
+  width: 900px;
+  position: relative;
+  float: left;
+
  }
 
+ .home_songs {
+  width: 900px;
+  position: relative;
+  float: left;
+ }
+
+ .song_container {
+  width: 900px;
+  /*height: 500px;*/
+  position: relative;
+ /* border: solid 1px black;*/
+ }
+
+ .comments_container {
+  width: 900px;
+  position: relative;
+  /* border: solid 1px red;*/
+ }
+
+ .comments_container img {
+  margin-right: 10px;
+  width: 65px;
+  height: 65px;
+ }
+
+
+
+ .comment_item{
+  width: 900px;
+  height: 100px;
+  position: relative;
+  /*border: dotted 1px blue;*/
+ }
+
+ .comment_image {
+  position: relative;
+  float: left;
+ /* border: solid 1px red;*/
+ }
+
+ .comment_detail {
+  position: relative;
+  width: 800px;
+  float: left;
+  /*border: solid 1px red;*/
+ }
+
+  .clear {
+  clear: both; 
+ }
 
 
 
