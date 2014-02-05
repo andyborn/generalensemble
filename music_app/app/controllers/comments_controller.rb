@@ -86,24 +86,22 @@ class CommentsController < ApplicationController
   end
 
   
+ 
+
   def flag
     @comment = @song.comments.find(params[:id])
-    @comment.flagged = true
-    @comment.save
-      redirect_to song_path(@song)
-    
-  end
-
-  def changeflag
-    @comment = @song.comments.find(params[:id])
-    if @comment.flagged == true
-      @comment.flagged = false
+    if current_user && current_user.role == "admin"
+      if @comment.flagged == true
+        @comment.flagged = false
+      else
+        @comment.flagged = true
+      end
     else
       @comment.flagged = true
     end
-    if @comment.save
+    @comment.save
       redirect_to song_path(@song)
-    end
+    
   end
 
 

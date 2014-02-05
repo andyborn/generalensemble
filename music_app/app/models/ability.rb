@@ -9,7 +9,7 @@ class Ability < ActiveRecord::Base
       can :read, Comment
       can :destroy, Comment
       can :flag, Comment
-      can :unflag, Comment
+      can :changeflag, Comment
 
     elsif user.role? :artist  
       can :read, :all
