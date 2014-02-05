@@ -1,9 +1,9 @@
 
 
 <h1>Welcome to TheForum!</h1>
-<h2>Share, Listen, Discuss<h2>
-
-<div class = "home_artists">
+<h2>/// Share, Listen, Discuss ///<h2>
+<div class = "home_page">
+<div class = "home">
   <h1>Artists</h1>
 
   <% @users.each do |user| %>
@@ -17,7 +17,7 @@
 </div>
 
 
-<div class = "home_songs">
+<div class = "home">
 <h1>Songs</h1>
 
   <% @songs.each do |song| %>
@@ -30,7 +30,7 @@
   <% end %>
   </table>
 
-<div class = "comments_container">
+<div class = "comments_container_home">
 <h1>Comments</h1>
   <ul>
   <% @comments.each do |comment| %>
@@ -40,7 +40,7 @@
         <%= image_tag comment.user.artist_image.thumb.url %>
       </div>
       <div class = "comment_detail">
-        <p><%= comment.comment %><p>
+        <p>"<%= comment.comment %>"<p>
         <h3><%= comment.updated_at.strftime("%d %B %Y")%> by 
         <%=link_to comment.user.artist_name, user_path(comment.user)%></h3>
       </div><br>
@@ -48,7 +48,7 @@
     <%end%>
     <br class="clear" />
   </ul>
-
+<div>
 
 
 

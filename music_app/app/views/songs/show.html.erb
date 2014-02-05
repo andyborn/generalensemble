@@ -37,8 +37,9 @@
   <br class="clear" />
 </div>
 
-    <h1>Comments</h1>
+    
 <div class = "comments_container">
+  <h2>Comments</h2>
   <ul>
   <% @song.comments.each do |comment| %>
     <li>
@@ -50,7 +51,7 @@
         <%if comment.flagged == true%>
         <p><%= "**Comment flagged for moderation**"%></p>
         <%else%>
-        <p><%= comment.comment %><p>
+        <p>"<%= comment.comment %>"<p>
           <%end%>
           
         <h3><%= comment.updated_at.strftime("%d %B %Y")%> by 

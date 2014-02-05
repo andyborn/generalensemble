@@ -4,6 +4,10 @@
 <div class = "index_item">
     <%= link_to image_tag(song.image.thumb.url), song_path(song) %>  
   <tr>
+    <audio controls>
+    <source src="<%= song.song_file %>" type="audio/mpeg" width=200px>
+  Your browser does not support the audio element.
+  </audio>
     <h3><%= song.title %><br><span>by </span><%=link_to song.user.artist_name, user_path(song.user)%></h3>
   </tr>
 </div>  

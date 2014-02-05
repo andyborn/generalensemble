@@ -21,6 +21,12 @@
   height: 100%;
  }
 
+ audio {
+  width:200px;
+  height: 23px;
+  display: inline-block;
+ }
+
  div {
   margin: 0;
  }
@@ -30,11 +36,11 @@
  }
 
  h2 {
-  font-size: 125%; 
+  font-size: 160%; 
  }
 
  h3 {
-  font-size: 80%;
+  font-size: 95%;
   padding-top: none;
  }
 
@@ -43,6 +49,7 @@
  }
 
  p {
+  font-size: 14px;
   margin: none;
   padding: none;
  }
@@ -124,6 +131,11 @@
   /*border: solid 2px;*/
  }
 
+ .artist_details audio{
+  width: 500px;
+  display: inline-block;
+ }
+
  .discography {
   position: relative;
   float: left;
@@ -165,8 +177,8 @@
  }
 
  .player_large img {
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
  }
 
  .song_options {
@@ -178,25 +190,15 @@
   margin-bottom: 30px;
  }
 
- .home_artists {
+ .home {
   width: 900px;
   position: relative;
   float: left;
+  margin-bottom: 20px;
 
  }
 
- .home_songs {
-  width: 900px;
-  position: relative;
-  float: left;
- }
-
- .home_comments {
-  width: 900px;
-  position: relative;
-  float: left;
-
- }
+ 
 
  .song_container {
   width: 900px;
@@ -209,7 +211,9 @@
   width: 900px;
   position: relative;
   float: left;
-  /* border: solid 1px red;*/
+  padding-left: 20px;
+  padding-top: 40px;
+  /*border-top: dotted 1px black;*/
  }
 
  .comments_container img {
@@ -218,6 +222,19 @@
   height: 65px;
  }
 
+.comments_container_home {
+  width: 900px;
+  position: relative;
+  float: left;
+  padding-top: 30px;
+  /*border-top: dotted 1px black;*/
+ }
+
+ .comments_container_home img {
+  margin-right: 10px;
+  width: 65px;
+  height: 65px;
+ }
 
 
  .comment_item{
@@ -258,4 +275,6 @@ text-align:left;
 padding-right: 12px;
 }
 
-
+.home_page {
+  font-size: 75%;
+}
