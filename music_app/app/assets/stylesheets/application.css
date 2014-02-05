@@ -15,7 +15,7 @@
  body {
   height: 100%;
   background-color: #E9E8E8;
-  font-size: 16px;
+  font-size: 13px;
   font-family: helvetica;
   line-height: 120%;
   height: 100%;
@@ -74,15 +74,6 @@
 
  }
 
- #logo{
-  position: relative;
-  float: left;
-  height: 60px;
-  padding-left: 10px;
-  font-size: 12px;
-
-  
- }
 
  #welcome{
   position: relative;
@@ -200,6 +191,13 @@
   float: left;
  }
 
+ .home_comments {
+  width: 900px;
+  position: relative;
+  float: left;
+
+ }
+
  .song_container {
   width: 900px;
   /*height: 500px;*/
@@ -210,6 +208,7 @@
  .comments_container {
   width: 900px;
   position: relative;
+  float: left;
   /* border: solid 1px red;*/
  }
 
@@ -246,6 +245,13 @@
  }
 
 
+ #logo{
+  position: relative;
+  float: left;
+  height: 60px;
+  padding-left: 10px;
+  font-size: 12px;
+ }
 
 
 

@@ -30,9 +30,25 @@
   <% end %>
   </table>
 
-</div>
+<div class = "comments_container">
+<h1>Comments</h1>
+  <ul>
+  <% @comments.each do |comment| %>
+    <li>
+      <div class = "comment_item">
+      <div class = "comment_image">
+        <%= image_tag comment.user.artist_image.thumb.url %>
+      </div>
+      <div class = "comment_detail">
+        <p><%= comment.comment %><p>
+        <h3><%= comment.updated_at.strftime("%d %B %Y")%> by 
+        <%=link_to comment.user.artist_name, user_path(comment.user)%></h3>
+      </div><br>
+      </li><br>
+    <%end%>
+    <br class="clear" />
+  </ul>
 
-<br />
 
 
 
