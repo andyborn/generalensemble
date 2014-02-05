@@ -40,7 +40,9 @@ Your browser does not support the audio element.
 <%= comment.updated_at%><br>
 <%= comment.user.artist_name%><br>
 <%= comment.comment %><br>
+<% if can? :manage, comment %>
 <%= link_to 'Delete Comment', [@song, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
+<%end%>
 <%end%>
 </div>
 

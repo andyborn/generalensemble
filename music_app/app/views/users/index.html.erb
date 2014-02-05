@@ -2,8 +2,10 @@
 
 
 <% @users.each do |user| %>
-   <div class = "index_item">
+   <div class = "index_item"> 
+  
   <%= link_to image_tag(user.artist_image.thumb.url), user_path(user) %>
+  
   <h3><%= user.artist_name %></h3>
   </div>
 <% end %>

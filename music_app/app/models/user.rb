@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
     self.role ||= "artist"
   end
 
-  
+
   
 
 
