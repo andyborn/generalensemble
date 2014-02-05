@@ -7,14 +7,14 @@
 
 <p>
   <b>User:</b>
-  <%= @comment.user_id %>
+  <%= @comment.user.artist_name %>
 </p>
 
 <p>
   <b>Song:</b>
-  <%= @comment.song_id %>
+  <%= @comment.song.title %>
 </p>
 
 
 
-<%= link_to 'Back', song_comments_path(@song) %>
+<%= link_to 'Back', admin_path %>

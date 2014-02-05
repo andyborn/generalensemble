@@ -6,6 +6,7 @@ class Ability < ActiveRecord::Base
     if user.role? :admin
       can :manage, Song
       can :manage, User
+      can :read, Comment
       can :destroy, Comment
       can :flag, Comment
       can :unflag, Comment

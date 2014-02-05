@@ -48,6 +48,7 @@ class CommentsController < ApplicationController
   def create
     @comment = @song.comments.new(params[:comment])
     @comment.user = current_user
+    @comment.flagged = false
 
     if @comment.save
       redirect_to song_path(@song)
@@ -93,9 +94,13 @@ class CommentsController < ApplicationController
     
   end
 
-  def unflag
+  def changeflag
     @comment = @song.comments.find(params[:id])
-    @comment.flagged = false
+    if @comment.flagged == true
+      @comment.flagged = false
+    else
+      @comment.flagged = true
+    end
     if @comment.save
       redirect_to song_path(@song)
     end

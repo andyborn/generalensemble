@@ -20,13 +20,26 @@
 
 <div class = "comments_container">
 <h1>Comments</h1>
-  <ul>
+  <table>
+    <tr>
+      <th>Comment ID</th>
+        <th>Date Posted</th>
+        <th>Song</th>
+        <th>Posted by</th>
+        <th>Flagged?</th>
+      </tr>
   <% @comments.each do |comment| %>
-    <li>
-      <p><%= comment.comment %><p>
-      <h3><%= comment.updated_at.strftime("%d %B %Y")%> by 
-        <%=comment.user.artist_name%></h3>
-      </li><br>
+    <tr>
+      <td><%= comment.id %></td>
+      <td><%= comment.created_at.strftime("%d %B %Y")%></td>
+      <td><%= comment.song.title%></td>
+        <td><%=comment.user.artist_name%></td>
+        <td><%=comment.flagged%></td>
+        <td><%= link_to 'Delete', [comment.song, comment], method: :delete, data: { confirm: 'Are you sure?' } %><td>
+        <td><%= link_to 'Show', song_comment_path(comment.song, comment)%></td>
+        <td><%= link_to 'ChangeFlag', [comment.song, comment], method: :changeflag, data: { confirm: 'Are you sure you want to change flag?' } %> </td>
+
+    </tr>
     <%end%>
     <br class="clear" />
   </ul>

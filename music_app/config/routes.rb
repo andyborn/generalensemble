@@ -16,6 +16,7 @@ MusicApp::Application.routes.draw do
   root to: "home#index"
 
   match 'songs/:song_id/comments/:id', to: 'comments#flag', as: :comments_flag
+  match 'songs/:song_id/comments/:id', to: 'comments#changeflag', as: :comments_changeflag
 
   match '/admin', to: 'admin#index', as: :admin
 
