@@ -5,7 +5,7 @@
 <h2>/// <a href="#artists">Share</a>, <a href="#songs">Listen</a>, <a href="#tags">Discover</a>, <a href="#comments">Discuss</a> ///<h2>
 <div class = "home_page">
 <div class = "home" id = "artists">
-  <h1>Artists</h1>
+  <h2>New Artists!</h2>
 
   <% @users.each do |user| %>
      <div class = "index_item"> 
@@ -18,7 +18,7 @@
 </div>
 
 <div class = "home" id = "tags">
-<h1>Tags</h1>
+<h2>Popular Tags!</h2>
 
 
 <% if @tags.count > 0 %>
@@ -38,7 +38,7 @@
 </div>
 
 <div class = "home" id = "songs">
-<h1>Songs</h1>
+<h2>Latest Songs!</h2>
 
   <% @songs.each do |song| %>
   <div class = "index_item">
@@ -55,7 +55,7 @@
   </div>
 
 <div class = "comments_container_home" id = "comments">
-<h1>Comments</h1>
+<h2>Recent Comments!</h2>
   <ul>
   <% @comments.each do |comment| %>
     <li>
