@@ -31,6 +31,12 @@ class User < ActiveRecord::Base
     self.role.to_s == role.to_s
   end
 
+  
+  def self.artists
+    joins(:songs).group('songs.user_id').having('count(*) > 0')
+  end
+
+
   private
   def set_default_role
     self.role ||= "artist"
