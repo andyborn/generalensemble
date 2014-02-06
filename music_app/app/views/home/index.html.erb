@@ -69,7 +69,9 @@
       <div class = "comment_detail">
         <p>"<%= comment.comment %>"<p>
         <h3><%= comment.updated_at.strftime("%d %B %Y")%> by 
-        <%=link_to comment.user.artist_name, user_path(comment.user)%></h3>
+        <%=link_to comment.user.artist_name, user_path(comment.user)%> about  
+        <%=link_to comment.song.title, song_path(comment.song)%> by 
+        <%=link_to comment.song.user.artist_name, song_path(comment.song)%> </h3>
       </div><br>
       </li><br>
     <%end%>
