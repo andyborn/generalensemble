@@ -22,11 +22,7 @@
           <%= link_to 'login', login_path %></h3> 
         <%end%>
 
-        <% flash.each do |name, msg| %>
-          <div class="flash-message flash-message-<%= name %>">
-            <%= msg %>
-          </div>
-        <% end %>
+        
       </div>  
     </div>  
       <div class = "nav"> 
@@ -39,7 +35,14 @@
             <%end%>
             <%if current_user && current_user.role == "admin"%>
             <li><%= link_to 'Admin', admin_path%></li>
-            <%end%>    
+            <%end%> 
+            <% flash.each do |name, msg| %>
+          <li class="flash-message flash-message-<%= name %>">
+            <%= msg %>
+            <% end %>
+          </li>
+        
+        </li>   
         </ul>
       </div>
   
