@@ -2,7 +2,11 @@
 
 <div class="user_banner">
   <%= image_tag @user.banner_image.url %>
-  <p id="text" style="color: red;"><%=  @user.artist_name %></p>
+  <% if @user.header_font_colour%>
+  <p id="text" style="color: #<%=@user.header_font_colour%>;"><%=  @user.artist_name %></p>
+  <%else%>
+  <p id="text"><%=  @user.artist_name %></p>
+  <%end%>
 
 </div>
 
