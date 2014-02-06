@@ -13,6 +13,10 @@ class Song < ActiveRecord::Base
   has_many :comments
 
   validates :title, presence: true
+  validates :song_file, presence: true
+  validates_length_of :title, :maximum => 50
+  validates_length_of :title, :maximum => 500
+
 
 
 end

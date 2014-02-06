@@ -16,7 +16,7 @@
       <div id = "welcome">
         <% if current_user %>
           <h3>Hi <%=current_user.artist_name%>
-          <%= link_to ' logout', logout_path %></h3>
+          <%= link_to ' // logout', logout_path %></h3>
         <%else%>
           <h3><%= link_to 'sign up  |', new_user_path %>
           <%= link_to 'login', login_path %></h3> 

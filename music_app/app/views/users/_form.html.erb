@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.text_field :email %>
+    <%= f.text_field :email, {placeholder: "Required!"} %>
   </div>
   <div class="field">
     <%= f.label :password %><br />
@@ -25,8 +25,24 @@
   </div>
   <div class="field">
     <%= f.label :artist_name %><br />
-    <%= f.text_field :artist_name %>
+    <%= f.text_field :artist_name, {placeholder: "Required!"}  %>
   </div>
+  
+  
+  <div class="field">
+    <%= f.label :bio %><br />
+    <%= f.text_area :bio, {placeholder: "Optional! Max 1000 characters"}  %>
+  </div>
+  <div class="field">
+    <%= f.label :website %><br />
+    <%= f.text_field :website, {placeholder: "eg. www.band.com"} %>
+  </div>
+  <div class="field">
+  <%= f.label :tags %>
+  <%= f.text_field :tag_list, {placeholder: "split tags with commas"}%>
+  </div>
+
+  <h2>Customise Your Artist Profile!</h2>
   <div class="field">
     <%= f.label :artist_image %><br />
     <%= f.file_field :artist_image %>
@@ -37,20 +53,7 @@
   </div>
   <div class="field">
     <%= f.label :header_font_colour %><br />
-    <%= f.text_field :header_font_colour %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :bio %><br />
-    <%= f.text_area :bio %>
-  </div>
-  <div class="field">
-    <%= f.label :website %><br />
-    <%= f.text_field :website %>
-  </div>
-  <div class="field">
-  <%= f.label :tags %>
-  <%= f.text_field :tag_list %>
+    <%= f.text_field :header_font_colour, {placeholder: "RGB format eg.DD44G4"} %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -14,11 +14,11 @@
   
   <div class="field">
     <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= f.text_field :title, {placeholder: "Required! max 50 characters"} %>
   </div>
   <div class="field">
     <%= f.label :about %><br />
-    <%= f.text_field :about %>
+    <%= f.text_area :about,  {placeholder: "Optional! max 500 characters"}%>
   </div>
   <div class="field">
     <%= f.label :song_file %><br />
