@@ -39,7 +39,11 @@
             <%end%>    
         </ul>
       </div>
-  <div id = "views">
+  <% if @user.main_body_colour%>    
+    <div id = "views" style="background-color: #<%=@user.main_body_colour%>;">
+  <%else%>
+    <div id = "views"> 
+  <%end%> 
     <%= yield %>
   </div>
   </div>
