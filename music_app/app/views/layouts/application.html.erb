@@ -7,8 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class = "main_container">
-    <div class = "header">
+  <div id='bg'>
+  <div id="main_container">
+    <div class='header'>
       <div id = "logo"><h1> theFORUM //</h1></div>
       <div id = "welcome">
         <% if current_user %>
@@ -22,12 +23,12 @@
         <% flash.each do |name, msg| %>
           <div class="flash-message flash-message-<%= name %>">
             <%= msg %>
-          </div>
+          </div> <!-- closes flash warning -->
         <% end %>
-      </div>  
-    </div>  
-      <div class = "nav"> 
-        <ul id="list_in_a_row">
+      </div> <!-- closes welcome  -->
+    </div>  <!-- closes header  -->
+    <div class = "nav"> 
+      <ul id="list_in_a_row">
             <li><%= link_to 'Home', root_path %></li>
             <li><%= link_to 'Artists', users_path %></li>      
             <li><%= link_to 'Songs', songs_path %></li> 
@@ -37,10 +38,10 @@
             <%if current_user && current_user.role == "admin"%>
             <li><%= link_to 'Admin', admin_path%></li>
             <%end%>    
-        </ul>
-      </div>
+      </ul>
+    </div> <!-- closes nav -->
     <%= yield %>
-
-  </div>
+  </div> <!-- closes main container -->
+</div> <!-- closes bg -->
 </body>
 </html>

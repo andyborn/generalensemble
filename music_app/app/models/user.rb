@@ -5,8 +5,6 @@ class User < ActiveRecord::Base
 
   acts_as_taggable_on :tags
 
-  
-
   mount_uploader :artist_image, ArtistImageUploader
 
   attr_accessible :artist_image, :artist_name, :bio, :email, :password, :website, :password_confirmation, :tag_list
@@ -31,12 +29,17 @@ class User < ActiveRecord::Base
     self.role.to_s == role.to_s
   end
 
+  def self.artists
+    joins(:songs).group('songs.user_id').having('count(*) > 0')
+  end
+
+
   private
   def set_default_role
     self.role ||= "artist"
   end
 
-
+  
   
 
 

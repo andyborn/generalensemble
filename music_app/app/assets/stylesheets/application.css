@@ -13,13 +13,20 @@
  */
 
  body {
-  height: 100%;
-  background-color: #E9E8E8;
-  font-size: 13px;
-  font-family: helvetica;
-  line-height: 120%;
-  height: 100%;
- }
+  background: url('http://i.imgur.com/kVgjrVK.jpg');
+/* the follow is the code to have the image display as a full page */
+background-position: center;
+background-attachment: fixed;
+-webkit-background-size: cover; /* the next 3 lines are "browser prefixes", they are necessary to include for CSS3 techniques */
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+font-size: 13px;
+font-family: helvetica;
+line-height: 120%;
+}
+
+
 
  audio {
   width:200px;
@@ -64,12 +71,10 @@
   text-decoration: none;
  }
 
- .main_container {
-  
+ #main_container {
   width: 900px;
   margin: 0 auto;
-  height: 2000px;
-
+  height: 100%;
  }
 
  .header {
@@ -222,7 +227,8 @@
   height: 65px;
  }
 
-.comments_container_home {
+<div class="comments_container home"
+.comments_container.home {
   width: 900px;
   position: relative;
   float: left;
@@ -277,4 +283,12 @@ padding-right: 12px;
 
 .home_page {
   font-size: 75%;
+}
+
+#bg {
+  margin: 0px;
+  padding: 0px;
+  width: inherit;
+  height: inherit;
+  background-color: rgba(148, 150, 153, 0.8);
 }
