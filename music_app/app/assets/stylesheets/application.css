@@ -21,11 +21,6 @@
   height: 100%;
  }
 
- audio {
-  width:200px;
-  height: 23px;
-  display: inline-block;
- }
 
  div {
   margin: 0;
@@ -116,7 +111,7 @@
 
  .index_item{
   width: 200px;
-  height: 250px;
+  height: 270px;
   /*border: solid 2px black;*/
   position: relative;
   float: left;
@@ -136,10 +131,7 @@
   
  }
 
- .artist_details audio{
-  width: 500px;
-  display: inline-block;
- }
+ 
 
  .discography {
   position: relative;
@@ -307,4 +299,15 @@ padding-right: 12px;
     top:30px;
 }
 
+
+ audio {
+  width:200px;
+  height: 23px;
+  display: inline-block;
+ }
+
+ textarea {
+  height: 40px;
+  width: 800px;
+ }
 
