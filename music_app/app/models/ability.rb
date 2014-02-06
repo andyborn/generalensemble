@@ -10,6 +10,7 @@ class Ability < ActiveRecord::Base
       can :destroy, Comment
       can :flag, Comment
       can :changeflag, Comment
+      can :tagged, :all
 
     elsif user.role? :artist  
       can :read, :all
@@ -31,9 +32,11 @@ class Ability < ActiveRecord::Base
       end
 
       can :flag, Comment
+      can :tagged, :all
 
     else
       can :read, :all
+      can :tagged, :all
       can :create, User
     end
     
