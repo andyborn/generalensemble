@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
 
   def index
-    @users = User.artists
+    @users = User.artists.order('artist_name')
 
     respond_to do |format|
       format.html # index.html.erb
