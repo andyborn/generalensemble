@@ -1,9 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>
-  <%= @user.artist_name %>
-</h1>
+<div class="user_banner">
+  <%= image_tag @user.banner_image.url %>
+  <p id="text" style="color: red;"><%=  @user.artist_name %></p>
 
+</div>
 
 
 

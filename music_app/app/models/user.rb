@@ -8,8 +8,9 @@ class User < ActiveRecord::Base
   
 
   mount_uploader :artist_image, ArtistImageUploader
+  mount_uploader :banner_image, ArtistBannerUploader
 
-  attr_accessible :artist_image, :artist_name, :bio, :email, :password, :website, :password_confirmation, :tag_list
+  attr_accessible :artist_image, :banner_image, :artist_name, :bio, :email, :password, :website, :password_confirmation, :tag_list
 
   has_many :songs
   has_many :comments
@@ -31,7 +32,7 @@ class User < ActiveRecord::Base
     self.role.to_s == role.to_s
   end
 
-  
+
   def self.artists
     joins(:songs).group('songs.user_id').having('count(*) > 0')
   end
