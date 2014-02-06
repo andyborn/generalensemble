@@ -14,8 +14,8 @@
 
  body {
   height: 100%;
-  background-color: #E9E8E8;
-  background-color: red;
+  background-color: #c9c8c8;
+ 
   font-size: 13px;
   font-family: helvetica;
   line-height: 120%;
@@ -25,6 +25,7 @@
 
  div {
   margin: 0;
+  border-radius: 5px;
  }
 
  h1 {
@@ -75,6 +76,7 @@
   height: 60px;
   background-color: rgb(60, 63, 63);
   color: #FAFFFF;
+  border-bottom: #BBBBBB solid 2px;
 
  }
 
@@ -298,6 +300,7 @@ padding-right: 12px;
   font-size: 50px;
   font-weight: bold;
   margin-left: -15px;
+
 }
 
 
@@ -313,6 +316,10 @@ padding-right: 12px;
     top:30px;
 }
 
+img {
+  border-bottom: 2px solid rgb(81, 104, 103);
+  border-radius: 5px;
+}
 
  audio {
   width:200px;
@@ -327,9 +334,18 @@ padding-right: 12px;
 
  #views {
   width: 870px;
-  padding: 0 15px;
+  margin-top: 5px;
+  padding: 5px 15px;
   /*border: red solid 2px;*/
   height: 100%;
   background-color: #E9E8E8;
  }
 
+ footer {
+  display: block;
+  border: solid black 2px;
+  width: 900px;
+  height: 200px;
+  background-color: rgb(60, 63, 63);
+  color: white; 
+ }

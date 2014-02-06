@@ -10,10 +10,10 @@ class User < ActiveRecord::Base
   mount_uploader :artist_image, ArtistImageUploader
   mount_uploader :banner_image, ArtistBannerUploader
 
-  attr_accessible :header_font_colour, :artist_image, :banner_image, :artist_name, :bio, :email, :password, :website, :password_confirmation, :tag_list
+  attr_accessible :background_colour, :main_body_colour, :header_font_colour, :artist_image, :banner_image, :artist_name, :bio, :email, :password, :website, :password_confirmation, :tag_list
 
-  has_many :songs
-  has_many :comments
+  has_many :songs, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
 
   validates :password, presence: true, on: :create
