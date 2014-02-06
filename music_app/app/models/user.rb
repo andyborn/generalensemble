@@ -27,8 +27,8 @@ class User < ActiveRecord::Base
   validates :artist_name, presence: true
 
   validates_length_of :bio, :maximum => 1000, :message => "less than 1000 characters if you don't mind"
-  validates_length_of :header_font_colour, :is => 6
-  
+  validates_length_of :header_font_colour, :maximum => 6
+
   def role?(role)
     self.role.to_s == role.to_s
   end

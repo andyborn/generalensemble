@@ -37,6 +37,7 @@
     
 <div class = "comments_container">
   <h2>Comments</h2>
+  <%= render 'form_comment' %> 
   <ul>
   <% @song.comments.each do |comment| %>
     <li>
@@ -60,7 +61,7 @@
         <%= link_to 'Delete', [@song, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
         <%end%>
       
-      <% if can? :flag, comment %>
+      <% if can? :flag, comment%>
       <%= link_to 'Flag', [@song, comment], method: :flag, data: { confirm: 'Are you sure you want to flag?' } %>
       <%end%>
         </h3>
@@ -78,4 +79,4 @@
 
 
 
-<%= render 'form_comment' %> 
+

@@ -23,6 +23,7 @@
  }
 
 
+
  div {
   margin: 0;
   border-radius: 5px;
@@ -59,6 +60,11 @@
 
  a {
   text-decoration: none;
+  color: #E61BA5;
+ }
+
+ a:hover {
+  text-decoration: underline;
  }
 
  .main_container {
@@ -77,6 +83,7 @@
   background-color: rgb(60, 63, 63);
   color: #FAFFFF;
   border-bottom: #BBBBBB solid 2px;
+
 
  }
 
@@ -279,6 +286,7 @@
   height: 60px;
   padding-left: 10px;
   font-size: 12px;
+   font-family: 'Lato', sans-serif;
  }
 
 th, td {
@@ -349,3 +357,5 @@ img {
   background-color: rgb(60, 63, 63);
   color: white; 
  }
+
+
