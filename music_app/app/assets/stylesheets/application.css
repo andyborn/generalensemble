@@ -358,4 +358,7 @@ img {
   color: white; 
  }
 
+ .song_details audio {
+  width: 320px;
+ }
 
