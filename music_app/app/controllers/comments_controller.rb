@@ -80,7 +80,12 @@ class CommentsController < ApplicationController
     @comment = @song.comments.find(params[:id])
     @comment.destroy
 
+    if current_user.role == "admin"
+      redirect_to admin_path
+    else
+
     redirect_to song_path(@song)
+  end
   
     
   end

@@ -78,9 +78,14 @@ class SongsController < ApplicationController
     @song = Song.find(params[:id])
     @song.destroy
 
-    respond_to do |format|
-      format.html { redirect_to songs_url }
-      format.json { head :no_content }
+    if current_user.role == "admin"
+      redirect_to admin_path
+    else
+
+      respond_to do |format|
+        format.html { redirect_to songs_url }
+        format.json { head :no_content }
+      end
     end
   end
 end
