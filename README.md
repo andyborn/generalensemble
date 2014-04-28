@@ -1,6 +1,8 @@
 generalensemble
 ===============
 
+Project current hosted at www.samesamebutdifferent.co
+
 A music sharing website built in Rails
 
 This was my first rails project as part of the General Assembly WDI developer course.
