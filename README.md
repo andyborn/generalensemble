@@ -1,7 +1,6 @@
 generalensemble
 ===============
 
-Project current hosted at www.samesamebutdifferent.co
 
 A music sharing website built in Rails
 
